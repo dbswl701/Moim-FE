@@ -35,10 +35,3 @@ jobs:
       # netlify-cli를 사용하여 배포
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
-
-      # PR에 대한 미리보기 배포
-      - name: Deploy Preview to Netlify
-        run: netlify deploy --build --alias=pr-${{ github.event.number }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
